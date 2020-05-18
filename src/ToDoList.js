@@ -69,13 +69,15 @@ function ToDoList(){
                             setTodoText(todo.text)
                             setEditMode(true)
                             setEditTodo(todo)
-                        }}>
-                            Edit
+                        }}>  
+                            <Button variant="link">Edit</Button>   
                         </td>
                         <td onClick={async () => {                            
                             await axios.delete(endpoint + todo.id)                           
                             dispatch({type:'delete',payload:todo})
-                        }}>Delete</td>
+                        }}>
+                            <Button variant="link">Delete</Button>
+                        </td>
                     </tr>
                 ))}                
             </tbody>
